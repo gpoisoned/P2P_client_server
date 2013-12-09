@@ -1,0 +1,37 @@
+Jiwan Rana
+jiwan.rana@colorado.edu
+
+CS:4273 Programming Assignment 4
+
+Compile:
+        make
+                
+Clean:  
+        make clean
+
+Run:
+       ./server_PFS <port>
+       ./client_PFS <clientName> <serverIP> <serverPort>
+
+********************************************************** 
+Maximum File Size that can be transferred = 30000 bytes ~30KB
+
+********************************************************** 
+What works?
+********************************************************** 
+        # clients are able to connect to server via TCP
+        # clients can connect/disconnect from peers
+        # clients can execute:  
+                ls -> displays recent master file list
+                get > 
+                        get <fileName> command
+                        gets the file from the peer. 
+                exit -> exits client cleanly and notifies
+                        the server so that it can update 
+                        its master file list.
+        # As clients are added/removed server updates its
+                master file list and sends it to all other
+                connected clients.
+        # If client uses duplicate name, server denies the request
+                and so client closes. Server also performs the
+                necessary cleanup.
